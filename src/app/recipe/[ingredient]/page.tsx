@@ -11,6 +11,7 @@ import pstyle from './page.module.css'
 import { ingredients } from '@/app/tapes/ingredient';
 import { useRouter } from 'next/navigation';
 import  '@/app/globals.css';
+import mstyle from './recipe.module.css'
 
 interface RecipePageProps{
   params: {
@@ -55,7 +56,8 @@ export default function RecipePage({ params }: { params: Promise<{ ingredient: s
   return (
     <div className="app-container">
       <h1>recipe</h1>
-      <button onClick={() => router.back()} className='next-button'>
+      <div className='modorubotann'>
+      <button onClick={() => router.back()} className='mstyle.next-button'>
   {/* style={{
     position: 'absolute',
     top: '1rem',
@@ -67,6 +69,7 @@ export default function RecipePage({ params }: { params: Promise<{ ingredient: s
   }} */}
   ← 戻る
 </button>
+</div>
 
       <div className="recipe-list">
         {recipes

@@ -17,7 +17,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, onRecipeClick }) => {
     const URL = `/recipe/${recipe.slug}`;
 
 };
-　const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const isDraggingRef = useRef(false);
 
   const handleTouchStart = () => {

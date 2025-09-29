@@ -59,9 +59,8 @@ a {
 }
 
 .next-button{
-  position: absolute;
+  display: flex;
   top: 1rem;
-  right: 1rem;
   background: none;
   border: none;
   font-size: 0.8rem;
@@ -73,4 +72,8 @@ a {
 
 .next-button:hover{
   color: #e74c3c;
+  
+}
+.modorubotann{
+  display: flex;
 }
