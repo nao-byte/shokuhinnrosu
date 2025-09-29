@@ -1,0 +1,150 @@
+.app-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.app-container h1 {
+  color: #282727;
+  margin-bottom: 2rem;
+}
+
+.app-container {
+  background-image: url("/reizouko.png");
+  background-size: cover;
+}
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ポップアップのオーバーレイ */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+/* ポップアップの中身 */
+.popup-content {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  animation: fadeInScale 0.3s cubic-bezier(0.2, 0.8, 0.5, 1.2);
+  overflow: auto;
+  height: 80%;
+}
+
+.popup-content h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.popup-content h3 {
+  color: #11102a;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.popup-content ul, .popup-content ol {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  display: grid;
+}
+
+.popup-content li {
+  margin-bottom: 0.1rem;
+  color: #11102a;
+}
+
+/* 閉じるボタン */
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #95a5a6;
+  transition: color 0.2s ease-in-out;
+}
+
+.close-button:hover {
+  color: #e74c3c;
+}
+
+.popup-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px; /* 任意サイズ */
+}
+
+.recipe-title {
+  position: inherit;
+  bottom: 10px;
+  left: 10px;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 6px 12px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
+
+/* アニメーション */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.finish-button {
+  background-color: #2196F3;   /* 青いボタン */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: face(2).png;
+}
+
+.finish-button:hover {
+  background-color: #0b7dda;  /* マウスをのせたときの色 */
+}

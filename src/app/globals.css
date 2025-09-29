@@ -17,7 +17,6 @@ body {
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -39,4 +38,22 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.top-left-button {
+  position: fixed;   /* 画面の決まった場所に固定 */
+  top: 10px;         /* 上から10ピクセル */
+  left: 10px;        /* 左から10ピクセル */
+  border: none;      /* ボタンの枠を消す */
+  background: transparent; /* 背景を透明に */
+  padding: 0;
+  cursor: pointer;   /* マウスが乗ったら手の形に */
+}
+
+
+.kaba{
+  display: flex;
+  width: 60px;
+  height: 60px;
+  background-image: transparent;
 }
