@@ -57,3 +57,20 @@ a {
   height: 60px;
   background-image: transparent;
 }
+
+.next-button{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #000000;
+  /* background-color: #e73c3c; */
+  transition: color 0.2s ease-in-out;
+}
+
+.next-button:hover{
+  color: #e74c3c;
+}

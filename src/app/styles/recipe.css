@@ -142,9 +142,26 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-image: face(2).png;
+  background-image: face.png;
 }
 
 .finish-button:hover {
   background-color: #0b7dda;  /* マウスをのせたときの色 */
+}
+
+.next-button{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #000000;
+  background-color: #e74c3c;
+  transition: color 0.2s ease-in-out;
+}
+
+.next-button:hover{
+  color: #e74c3c;
 }

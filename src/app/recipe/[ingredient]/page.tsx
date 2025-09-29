@@ -9,6 +9,9 @@ import RecipePageCard from '@/app/components/RecipePageCard';
 import style from '@/app/styles/recipe.css'
 import pstyle from './page.module.css'
 import { ingredients } from '@/app/tapes/ingredient';
+import { useRouter } from 'next/navigation';
+import  '@/app/globals.css';
+
 interface RecipePageProps{
   params: {
     ingredient: ingredients
@@ -17,6 +20,7 @@ interface RecipePageProps{
 export default function RecipePage({ params }: { params: Promise<{ ingredient: string }> }) {
   const { ingredient } = use(params); 
   const filtereRecipes = recipes.filter(recipe => recipe.slug === ingredient);
+  const router = useRouter();
   const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
   const filteredRecipes = selectedRecipeId
   ? recipes.filter((recipe) => recipe.name === selectedRecipeId)
@@ -51,6 +55,19 @@ export default function RecipePage({ params }: { params: Promise<{ ingredient: s
   return (
     <div className="app-container">
       <h1>recipe</h1>
+      <button onClick={() => router.back()} className='next-button'>
+  {/* style={{
+    position: 'absolute',
+    top: '1rem',
+    left: '1rem',
+    background: 'transparent',
+    border: 'none',
+    fontSize: '1.5rem',
+    cursor: 'pointer',
+  }} */}
+  ← 戻る
+</button>
+
       <div className="recipe-list">
         {recipes
         .filter(recipe => recipe.slug === ingredient)
