@@ -1,33 +1,30 @@
 // app/page.tsx
 
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { recipes, Recipe } from '@/app/data/recipes';
-import '@/app/styles/recipe.css';
-import RecipeCard from './components/RecipeCard';
-import style from './styles/recipe'
-import pstyle from './page.module.css'
-import { useRouter } from 'next/router';
-import { ingredients } from './tapes/ingredient';
+import { useState } from "react";
+import { recipes, Recipe } from "@/app/data/recipes";
+import "@/app/styles/recipe.css";
+import RecipeCard from "./components/RecipeCard";
+import style from "./styles/recipe";
+import pstyle from "./page.module.css";
+import { useRouter } from "next/router";
+import { ingredients } from "./types/ingredient";
 
 export default function Home() {
-
   const [selectedRecipeId, setSelectedRecipeId] = useState<string | null>(null);
   const filteredRecipes = selectedRecipeId
-  ? recipes.filter((recipe) => recipe.name === selectedRecipeId)
-  : [];
+    ? recipes.filter((recipe) => recipe.name === selectedRecipeId)
+    : [];
   const selectedRecipe: Recipe | undefined = recipes.find(
     (r) => r.id === selectedRecipeId
   );
 
-   const seenSlugs = new Set<string>();
-
+  const seenSlugs = new Set<string>();
 
   const handleRecipeClick = (recipeId: string) => {
     if (selectedRecipeId === recipeId) {
     } else {
-    
     }
   };
 
@@ -36,43 +33,43 @@ export default function Home() {
   };
 
   const App = () => {
-  const [name, setName] = useState("");
-  const [imageName, setImageName] = useState("");
+    const [name, setName] = useState("");
+    const [imageName, setImageName] = useState("");
 
-  const handleClick = () => {
-    setName("マーボーナス");
-    setImageName("mabo-nasu.png");
-
+    const handleClick = () => {
+      setName("マーボーナス");
+      setImageName("mabo-nasu.png");
+    };
   };
-}
   return (
     <div className="app-container">
       <h1>ZeroWasteChef</h1>
-      <div className='kaba'>
-        <button onClick={handleClosePopup} className='fstyles.inish-button'>
-        
-        <img
-        src={`/face.png`} // ★カードには cardImage を使用
-      alt={'カバ'}
-      className="recipe-"
-      height={60}
-      ></img>  
-        </button> 
-        </div>
+      <div className="kaba">
+        <button onClick={handleClosePopup} className="fstyles.inish-button">
+          <img
+            src={`/face.png`} // ★カードには cardImage を使用
+            alt={"カバ"}
+            className="recipe-"
+            height={60}
+          ></img>
+        </button>
+      </div>
       <div className="recipe-list">
-        {recipes .filter((recipe) => {
-    if (seenSlugs.has(recipe.slug)) return false;
-    seenSlugs.add(recipe.slug);
-    return true;
-  }).map((recipe) => (
-          <RecipeCard
-            key={recipe.id}
-            recipe={recipe}
-            onRecipeClick={handleRecipeClick}
-          />
-        ))}
-      </div> 
-
+        {recipes
+          .filter((recipe) => {
+            if (seenSlugs.has(recipe.slug)) return false;
+            seenSlugs.add(recipe.slug);
+            return true;
+          })
+          .map((recipe) => (
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              position="top"
+              onRecipeClick={handleRecipeClick}
+            />
+          ))}
+      </div>
     </div>
   );
 }
