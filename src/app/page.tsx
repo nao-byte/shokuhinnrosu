@@ -21,7 +21,7 @@ export default function Home() {
     (r) => r.id === selectedRecipeId
   );
 
-   const seenSlugs = new Set<string>();
+    const seenSlugs = new Set<string>();
 
 
   const handleRecipeClick = (recipeId: string) => {
@@ -47,7 +47,7 @@ export default function Home() {
 }
   return (
     <div className="app-container">
-      <h1>ZeroWasteChef</h1>
+      <h1>CookIn</h1>
       <div className='kaba'>
         <button onClick={handleClosePopup} className='fstyles.inish-button'>
         

@@ -58,15 +58,7 @@ export default function RecipePage({ params }: { params: Promise<{ ingredient: s
       <h1>recipe</h1>
       <div className='modorubotann'>
       <button onClick={() => router.back()} className='mstyle.next-button'>
-  {/* style={{
-    position: 'absolute',
-    top: '1rem',
-    left: '1rem',
-    background: 'transparent',
-    border: 'none',
-    fontSize: '1.5rem',
-    cursor: 'pointer',
-  }} */}
+
   ← 戻る
 </button>
 </div>
